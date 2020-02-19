@@ -50,6 +50,41 @@ suite("Grid", () => {
         }));
     });
 
+    test("iterator returns cells in order, in row-major form", () => {
+        fc.assert(fc.property(smallGrid, grid => {
+            let lastSeenColumn = -1;
+            let lastSeenRow = 0;
+
+            for(const cell of grid) {
+                if (cell.column != lastSeenColumn + 1) {
+                    // We've looped around
+                    assert.equal(lastSeenColumn, grid.columns - 1);
+                    assert.equal(cell.column, 0);
+
+                } else {
+                    assert.equal(lastSeenRow, cell.row);
+                }
+
+                lastSeenColumn = cell.column;
+                lastSeenRow = cell.row;
+            }
+        }));
+    });
+
+    test("iterateRows returns all cells by row in order", () => {
+        fc.assert(fc.property(smallGrid, grid => {
+            let lastSeenRow = -1;
+            for (const row of grid.iterateRows()) {
+                for (let j = 0; j < grid.columns; j++) {
+                    const cell = row[j];
+                    assert.equal(cell.column, j);
+                    assert.equal(cell.row, lastSeenRow + 1);
+                }
+                lastSeenRow++;
+            }
+        }));
+    });
+
     test("constructor sets the neighbors of each of its cells", () => {
         function expectedNeighborCount(cell: Cell, grid: Grid) {
             const { row, column } = cell;

@@ -42,4 +42,8 @@ export default class Cell {
         if (this.west) neighbors.push(this.west);
         return neighbors;
     }
+
+    toString() {
+        return `(${this.row},${this.column})`;
+    }
 }

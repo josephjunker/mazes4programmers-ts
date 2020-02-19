@@ -52,4 +52,18 @@ export default class Grid {
     [Symbol.iterator]() : Iterator<Cell> {
         return this.grid[Symbol.iterator]();
     }
+
+    iterateRows() : Iterable<Array<Cell>> {
+        const { rows, grid, columns } = this;
+        return {
+            *[Symbol.iterator]() {
+                let row = 0;
+                while (row < rows) {
+                    yield grid.slice(row * columns, (row + 1) * columns);
+                    row++;
+                }
+            }
+        }
+    }
+
 }
