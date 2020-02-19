@@ -11,10 +11,12 @@
   "private": true,
   "dependencies": {
     "@types/chai": "^4.2.9",
-    "mathjs": "^6.6.0"
+    "mathjs": "^6.6.0",
+    "seedrandom": "^3.0.5"
   },
   "devDependencies": {
     "@types/mocha": "^7.0.1",
+    "@types/seedrandom": "^2.4.28",
     "chai": "^4.2.0",
     "fast-check": "^1.22.2",
     "mocha": "^7.0.1",
