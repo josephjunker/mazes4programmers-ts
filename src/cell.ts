@@ -17,9 +17,13 @@ export default class Cell {
         this.linkedCells = new Map();
     }
 
-    link(cell: Cell, bidirectional = true) {
+    link(cell: Cell) {
         this.linkedCells.set(cell, true);
-        if (bidirectional) cell.link(this, false);
+        cell.linkUnidirectional(this);
+    }
+
+    private linkUnidirectional(cell: Cell) {
+        this.linkedCells.set(cell, true);
     }
 
     links() {
