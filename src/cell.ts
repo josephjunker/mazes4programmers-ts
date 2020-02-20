@@ -30,7 +30,8 @@ export default class Cell {
         return this.linkedCells.keys();
     }
 
-    isLinked(cell: Cell) {
+    isLinked(cell: Cell | undefined) {
+        if (!cell) return false;
         return this.linkedCells.get(cell) || false;
     }
 
