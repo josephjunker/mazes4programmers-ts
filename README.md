@@ -1,1 +1,1 @@
-This is just a project I'm using to practice TypeScript and fast-check. The implementation of SVG logic is super fast and loose, and the maze data structures and algorithms are based on the Ruby code in the book "Mazes for Programmers" by Jamis Buck.
+This is just a project I'm using to practice TypeScript and fast-check. The implementation of SVG logic is minimal and hacky, and the maze data structures and algorithms are based on the Ruby code in the book "Mazes for Programmers" by Jamis Buck.
