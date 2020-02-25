@@ -1,50 +1,49 @@
-
 export default class Cell {
-    readonly row: number;
-    readonly column: number;
+  readonly row: number;
+  readonly column: number;
 
-    north: Cell | undefined;
-    south: Cell | undefined;
-    east: Cell | undefined;
-    west: Cell | undefined;
+  north: Cell | undefined;
+  south: Cell | undefined;
+  east: Cell | undefined;
+  west: Cell | undefined;
 
-    private linkedCells: Map<Cell, boolean>;
+  private linkedCells: Map<Cell, boolean>;
 
-    constructor(row: number, column: number) {
-        this.row = row;
-        this.column = column;
+  constructor(row: number, column: number) {
+    this.row = row;
+    this.column = column;
 
-        this.linkedCells = new Map();
-    }
+    this.linkedCells = new Map();
+  }
 
-    link(cell: Cell) {
-        this.linkedCells.set(cell, true);
-        cell.linkUnidirectional(this);
-    }
+  link(cell: Cell) {
+    this.linkedCells.set(cell, true);
+    cell.linkUnidirectional(this);
+  }
 
-    private linkUnidirectional(cell: Cell) {
-        this.linkedCells.set(cell, true);
-    }
+  private linkUnidirectional(cell: Cell) {
+    this.linkedCells.set(cell, true);
+  }
 
-    links() {
-        return this.linkedCells.keys();
-    }
+  links() {
+    return this.linkedCells.keys();
+  }
 
-    isLinked(cell: Cell | undefined) {
-        if (!cell) return false;
-        return this.linkedCells.get(cell) || false;
-    }
+  isLinked(cell: Cell | undefined) {
+    if (!cell) return false;
+    return this.linkedCells.get(cell) || false;
+  }
 
-    neighbors() : Array<Cell> {
-        const neighbors = [];
-        if (this.north) neighbors.push(this.north);
-        if (this.south) neighbors.push(this.south);
-        if (this.east) neighbors.push(this.east);
-        if (this.west) neighbors.push(this.west);
-        return neighbors;
-    }
+  neighbors(): Array<Cell> {
+    const neighbors = [];
+    if (this.north) neighbors.push(this.north);
+    if (this.south) neighbors.push(this.south);
+    if (this.east) neighbors.push(this.east);
+    if (this.west) neighbors.push(this.west);
+    return neighbors;
+  }
 
-    toString() {
-        return `(${this.row},${this.column})`;
-    }
+  toString() {
+    return `(${this.row},${this.column})`;
+  }
 }

@@ -4,7 +4,8 @@
   "description": "Implementation of sections of the book \"Mazes for Programmers\" in TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "format": "prettier --write \"src/**/*\""
   },
   "author": "Joseph Junker",
   "license": "MIT",
@@ -20,6 +21,7 @@
     "chai": "^4.2.0",
     "fast-check": "^1.22.2",
     "mocha": "^7.0.1",
+    "prettier": "^1.19.1",
     "ts-node": "^8.6.2",
     "typescript": "^3.7.5"
   }
