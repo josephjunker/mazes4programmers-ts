@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+demoName=$1
+outputFile="output/$(uuidgen | tr -d '-' | cut -c 1-8).png"
+
+node lib/src/demo/$demoName | inkscape -p -o $outputFile
+
+echo "Rendered result to $outputFile"
+open $outputFile

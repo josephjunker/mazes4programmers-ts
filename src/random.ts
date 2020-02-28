@@ -20,4 +20,8 @@ export default class Random {
 
     return arr[Math.abs(this.rng.int32()) % arr.length];
   }
+
+  coinFlip(): boolean {
+    return this.choose([true, false]);
+  }
 }
