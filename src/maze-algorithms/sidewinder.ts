@@ -1,5 +1,5 @@
-import Grid from "../grid";
-import Random from "../random";
+import Grid from "src/grid";
+import Random from "src/random";
 
 export default function binaryTree(grid: Grid, random: Random) {
   for (const row of grid.iterateRows()) {

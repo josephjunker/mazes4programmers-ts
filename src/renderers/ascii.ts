@@ -1,5 +1,5 @@
-import Grid from "../grid";
-import Cell from "../cell";
+import Grid from "src/grid";
+import Cell from "src/cell";
 
 const horizWall = "---",
   vertWall = "|",

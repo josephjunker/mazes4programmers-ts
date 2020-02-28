@@ -1,4 +1,4 @@
-import { Point, Box, line, render } from "../renderers/svg-data";
+import { Point, Box, line, render } from "src/renderers/svg-data";
 
 const upperLeft = new Point(0, 0);
 const upperRight = new Point(100, 100);

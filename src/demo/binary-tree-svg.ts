@@ -1,7 +1,7 @@
-import Grid from "../grid";
-import Random from "../random";
-import binaryTree from "../maze-algorithms/binary-tree";
-import toSvg from "../renderers/svg";
+import Grid from "src/grid";
+import Random from "src/random";
+import binaryTree from "src/maze-algorithms/binary-tree";
+import toSvg from "src/renderers/svg";
 
 const grid = new Grid(8, 12);
 binaryTree(grid, new Random());

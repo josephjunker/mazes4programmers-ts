@@ -1,7 +1,7 @@
-import { Point, Box, line, render, SVGElement } from "../renderers/svg-data";
+import { Point, Box, line, render, SVGElement } from "src/renderers/svg-data";
 
-import Grid from "../grid";
-import Cell from "../cell";
+import Grid from "src/grid";
+import Cell from "src/cell";
 
 export default function gridToSvg(grid: Grid, cellSize: number): string {
   const buffer = Math.ceil(cellSize / 2),

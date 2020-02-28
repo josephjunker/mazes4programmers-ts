@@ -1,4 +1,4 @@
-import Cell from "./cell";
+import Cell from "src/cell";
 
 export default class Grid {
   readonly rows: number;
