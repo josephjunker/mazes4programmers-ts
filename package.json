@@ -4,9 +4,8 @@
   "description": "Implementation of sections of the book \"Mazes for Programmers\" in TypeScript",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:types && npm run build:js",
-    "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir lib --extensions \".ts\"",
+    "build": "babel src --out-dir lib --extensions \".ts\"",
+    "build:watch": "npm run build -- --watch",
     "format": "prettier --write \"src/**/*\"",
     "test": "mocha",
     "type-check": "tsc --noEmit",
