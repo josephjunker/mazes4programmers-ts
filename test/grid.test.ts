@@ -4,9 +4,7 @@ import { assert } from "chai";
 import Grid from "src/grid";
 import Cell from "src/cell";
 
-const smallGrid = fc
-  .tuple(fc.integer(2, 6), fc.integer(2, 6))
-  .map(([x, y]) => new Grid(x, y));
+import { smallGrid } from "./testUtils";
 
 suite("Grid", () => {
   test("constructor makes a grid of the correct size", () => {
